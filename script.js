@@ -21,12 +21,12 @@ class BooksManager {
         const searchText = this.searchInput.value.trim().toLowerCase();
         const filteredList = this.filterList(searchText);
 
-        filteredList.forEach(item => {
+        filteredList.map(item => {
             const listItem = document.createElement("li");
             listItem.className = "m-2 w-80 bg-white rounded-lg shadow-md px-6 py-4";
             listItem.innerHTML = `
                 <p class="font-bold text-xl">${item.title}</p>
-                <span class="text-gray-700">${item.authors[0].name}</span>
+                <span class="text-gray-700">${item.authors.name}</span>
             `;
 
             this.listContainer.appendChild(listItem);
